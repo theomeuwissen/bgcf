@@ -1,0 +1,17 @@
+&inputvalues
+Nanim=35688                         !nanim=number of animals in data                                                         
+Nchr=1                             !nchr=number of chroms (limited to 1 for now)
+Nsnptotal=120160                          !nsnptotal
+bimfil=chr29_noxbred.bim                    !PLINK bim file (if nchr>1 => chromosome nr will be appended to filename)
+bedfil=chr29_noxbred.bed               !PLINK bed file (if nchr>1 => chromosome nr will be appended to filename)
+phenfil=hbc.fatpr                    !phenfilename of phenotype file containing nanim rows and 3 columns: Y1  weight fixed_effect_class (weight=1 => equal weights)
+PI_value=.002                          !PI-value for BayesC analysis (between 0 and 1) (negative PI =>  starting value for estimation of PI)
+Ve=1.31e-5                         !R=error covariance matrix across traits (full-matrix is needed; only this last line may contain comment; same other matrices) 
+Vsnp=2.26e-7                    !Vsnp matrix; SNP effect ~ N(0,Vsnp) 
+Vu=2.26e-5                       !Vu = polygenic covariance matrix (if Vu>0, a Ginverse matrix us read from "g.giv" (lower triangle in 3 columns: i j Ginv_value) 
+Ncycle=10000                          !ncycle=number of gibbs cycles
+Nburnin=1000                          !nburnin=number of burnin cycles
+Nwork=1                            !number of parallel chains == number of threads to be used (dont use more threads then available on computer)
+Ithin=0                            !thinning output (print every ithin sample) (ithin=0 => no output of individual samples )
+Ispeedup=0                            !ispeedup=0 ==> no speedup (=safe); ispeedup=10 => least important SNP is evaluated 10 times only
+/
